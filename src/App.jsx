@@ -7,8 +7,14 @@ function App() {
   const addWin = () => {
     setWins((wins) => wins + 1);
   };
+  const removeWin = () => {
+    setWins((wins) => wins - 1);
+  };
   const addLose = () => {
     setLoses((loses) => loses + 1);
+  };
+  const removeLose = () => {
+    setLoses((loses) => loses - 1);
   };
   const reset = () => {
     setWins(0);
@@ -18,13 +24,13 @@ function App() {
   return (
     <div className='app'>
       <div className='counter'>
-        <p className='wins' onClick={addWin}>
+        <p className='wins' onClick={addWin} onContextMenu={removeWin}>
           {wins}
         </p>
         <div className='mid'>
           <div className='reset' onClick={reset}></div>
         </div>
-        <p className='loses' onClick={addLose}>
+        <p className='loses' onClick={addLose} onContextMenu={removeLose}>
           {loses}
         </p>
       </div>
