@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import tmi from 'tmi.js';
+import { useState } from 'react';
 
 function App() {
   const [wins, setWins] = useState(0);
@@ -23,36 +22,6 @@ function App() {
     setWins(0);
     setLoses(0);
   };
-
-  useEffect(() => {
-    const params = new URLSearchParams(document.location.search);
-    if (params.get('streamer')) {
-      const client = new tmi.Client({
-        connection: {
-          secure: true,
-          reconnect: true,
-        },
-        channels: [params.get('streamer')],
-      });
-      client.connect();
-      client.on('message', (channel, tags, message, self) => {
-        // console.log(channel, tags, message);
-        if (tags.badges.broadcaster == '1' && message.toLowerCase() === 'wl+') {
-          addWin();
-        }
-        if (tags.badges.broadcaster == '1' && message.toLowerCase() === 'wl-') {
-          addLose();
-        }
-        if (
-          tags.badges.broadcaster == '1' &&
-          message.toLowerCase() === 'wlreset'
-        ) {
-          setWins(0);
-          setLoses(0);
-        } else return;
-      });
-    }
-  }, []);
 
   return (
     <div className='app'>
