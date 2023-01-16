@@ -7,24 +7,24 @@ function App() {
   const addWin = () => {
     if (wins >= 20) return;
     setWins((wins) => parseInt(wins) + 1);
-    localStorage.setItem('wins', wins + 1);
+    localStorage.setItem('wins', parseInt(wins) + 1);
   };
   const removeWin = (e) => {
     e.preventDefault();
     if (wins <= 0) return;
     setWins((wins) => parseInt(wins) - 1);
-    localStorage.setItem('wins', wins - 1);
+    localStorage.setItem('wins', parseInt(wins) - 1);
   };
   const addLose = () => {
     if (loses >= 20) return;
     setLoses((loses) => parseInt(loses) + 1);
-    localStorage.setItem('loses', loses + 1);
+    localStorage.setItem('loses', parseInt(loses) + 1);
   };
   const removeLose = (e) => {
     e.preventDefault();
     if (loses <= 0) return;
     setLoses((loses) => parseInt(loses) - 1);
-    localStorage.setItem('loses', loses - 1);
+    localStorage.setItem('loses', parseInt(loses) - 1);
   };
   const reset = () => {
     setWins(0);
