@@ -9,6 +9,10 @@ html,
   font-family: 'Lilita One', cursive;
 }
 
+body {
+  background-color: #2b2e38;
+}
+
 .app {
   width: 276px;
   height: 146px;
