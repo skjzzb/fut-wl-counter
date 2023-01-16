@@ -11,7 +11,7 @@
 - The counter will pop up on your OBS after this stage. Simply drag this popup and place it where ever you like.
 - Now, you can update your score directly from that panel.
 
-![howtoadd](https://im.ezgif.com/tmp/ezgif-1-799d85bf70.gif)
+![howtoadd](/readme/howtouse.gif)
 
 ### How it works
 
@@ -21,4 +21,4 @@ You can now control the scoreboard from that panel.
 - Right click on number will decrease the number
 - Clicking in the middle (FUT Champions logo) will reset the scoreboard.
 
-![howtoadd](https://im.ezgif.com/tmp/ezgif-1-0b3c8315f0.gif)
+![howtoadd](/readme/usage.gif)
