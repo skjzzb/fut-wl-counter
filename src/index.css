@@ -14,28 +14,29 @@ body {
 }
 
 .app {
-  width: 276px;
-  height: 146px;
   user-select: none;
+  display: flex;
+  flex-direction: column;
+  width: 276px;
 }
 
 .counter {
   height: 100%;
   display: flex;
   align-items: center;
-  background-image: url('/assets/img/fut-bg.png');
+  background-image: url('/assets/img/bg-rect-only.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 146px;
 }
 
 .mid {
-  width: 110px;
   height: 100%;
   display: flex;
   justify-content: center;
 }
 
-.reset {
-  width: 80%;
-  height: 100%;
+.mid > img {
   cursor: pointer;
 }
 
@@ -49,13 +50,48 @@ body {
   cursor: pointer;
 }
 
-.buttons {
+.rivals {
   margin-top: 20px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
+  width: 257px;
+  height: 135px;
+  background-image: url(/assets/img/rivals.png);
+  align-self: flex-end;
 }
 
-button {
-  padding: 6px 10px;
+.rivals-counter {
+  display: flex;
+  height: 92%;
+  padding-right: 16px;
+  justify-content: end;
+  align-items: center;
+}
+
+input[type='number'] {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 42%;
+  font-size: 56px;
+  color: white;
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.champs {
+  perspective: 1000px;
+  animation: flip 10s alternate-reverse infinite ease-in-out;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(180deg);
+  }
+  15% {
+    transform: rotateY(0deg);
+  }
 }

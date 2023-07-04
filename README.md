@@ -22,3 +22,5 @@ You can now control the scoreboard from that panel.
 - Clicking in the middle (FUT Champions logo) will reset the scoreboard.
 
 ![howtoadd](/readme/usage.gif)
+
+Any feedback is appreciated.
