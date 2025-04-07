@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import HorizontalStepper from './HorizontalStepper';
 
 function App() {
   const [wins, setWins] = useState(localStorage.getItem('wins') || 0);
@@ -52,35 +53,47 @@ function App() {
 
   return (
     <div className='app'>
-      <div className='counter'>
-        <p className='wins' onClick={addWin} onContextMenu={removeWin}>
-          {wins}
-        </p>
-        <div className='mid'>
-          <img
-            className='champs'
-            onClick={() => {
-              reset();
-            }}
-            src='/assets/img/champions-only.png'
-            alt=''
-          />
-        </div>
-        <p className='loses' onClick={addLose} onContextMenu={removeLose}>
-          {loses}
-        </p>
-      </div>
-      <div className='rivals'>
-        <div className='rivals-counter'>
-          <input
-            onChange={changeRivals}
-            type='number'
-            value={rivals}
-            style={rivals.length > 3 ? { fontSize: '40px' } : {}}
-          />
-        </div>
-      </div>
+  <div className='counter'>
+    <div className='win-section'>
+      <p className='wins'>W</p>
+      <p className='wins' onClick={addWin} onContextMenu={removeWin}>
+        {wins}
+      </p>
     </div>
+
+    <div className='mid'>
+      <img
+        className='champs'
+        onClick={() => {
+          reset();
+        }}
+        src='/assets/img/champions-only.png'
+        alt=''
+      />
+    </div>
+
+    <div className='loss-section'>
+      <p className='loses'>L</p>
+      <p className='loses' onClick={addLose} onContextMenu={removeLose}>
+        {loses}
+      </p>
+    </div>
+  </div>
+
+  <div className='rivals'>
+    <div className='rivals-counter'>
+      <input
+        onChange={changeRivals}
+        type='number'
+        value={rivals}
+        style={rivals.length > 3 ? { fontSize: '40px' } : {}}
+      />
+    </div>
+  </div>
+   {/* Add Stepper here */}
+   <HorizontalStepper />
+</div>
+
   );
 }
 
